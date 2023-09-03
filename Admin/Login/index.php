@@ -13,7 +13,7 @@ include "datacon.php";?>
 		<body>
 		<?php
 			if (isset($_SESSION['UserName']) && isset($_SESSION['Account_Type'])) {
-				echo"<script> alert('User Already Logged In'); window.location='dashboard.php'; </script>";
+				echo"<script> alert('User Already Logged In'); window.location='../Dashboard'; </script>";
 			} else {
 
 				if (mysqli_connect_errno()) {
@@ -109,7 +109,7 @@ include "datacon.php";?>
 								if(password_verify($passwordhash,$pass_db)){
 									$_SESSION["UserName"] = $User__Name;
 									$_SESSION["Account_Type"] = $Account_Type;
-									header("Location:./Dashboard.php");
+									header("Location:../Dashboard.php");
 								} else {
 									echo(" <script>alert('Invalid Credentials !!!')</script>");
 								}

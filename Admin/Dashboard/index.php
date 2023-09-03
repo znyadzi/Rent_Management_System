@@ -21,10 +21,10 @@
     <?php 
         if(!($resultadminlog)){
             session_destroy();
-            echo"<script> window.location='index.php'; </script>";
+            echo"<script> window.location='./Login'; </script>";
         } 
         if(!isset($_SESSION['UserName']) && !(isset($_SESSION['Account_Type']))){
-            echo"<script> alert('User Must Be Logged In !!!'); window.location='index.php'; </script>";
+            echo"<script> alert('User Must Be Logged In !!!'); window.location='../Login'; </script>";
         } else {
             ?>
             <div class="col">
