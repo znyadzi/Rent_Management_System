@@ -1,7 +1,7 @@
 <?php
  $dbServername= "localhost";
- $dbUsername= "clearer";
- $dbPassword= "abokoma";
- $dbName= "rmuclearance";
+ $dbUsername= "root";
+ $dbPassword= "";
+ $dbName= "Rent_Management_System";
 
  $conn= mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
