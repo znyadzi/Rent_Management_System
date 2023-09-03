@@ -25,7 +25,7 @@ include "datacon.php";?>
 					if (!$result) {
 						//echo("<script>alert('We recognised your first login. you are required to register')</script>") ?>
 						<h1>Admin Register Page</h1>
-						<form name="login" action="index.php" method="post">
+						<form name="login" method="post">
 							<label style="margin-top:20px" for="username">Prefered Username:</label>
 							<input type="text" id="username" placeholder="Leave blank to use 'Admin'" name="Username" >
 							
@@ -42,7 +42,7 @@ include "datacon.php";?>
 							<input type="password" placeholder="Password" id="password" name="Password" required >
 
 							<label for="password">Confirm Password:</label>
-							<input type="password" oninput="
+							<input type="password"  placeholder="Confirm Password" id="confirmpassword" name="Confirmpassword" required oninput="
 
 								const passwordInput = document.getElementById('password');
 								const confirmpasswordInput = document.getElementById('confirmpassword');
@@ -54,7 +54,7 @@ include "datacon.php";?>
 								} else {
 									document.getElementById('passCheckMessage').style.display = 'none';
 								}
-							" placeholder="Confirm Password" id="confirmpassword" name="Confirmpassword" required >
+							">
 							<p id="passCheckMessage" style=" display: none; color: red; " >Passwords do not match !!!</p>
 							
 							<input style="margin-bottom:20px" id="reg_submit_button" name="Register" type="submit" value="Register" >
@@ -78,13 +78,13 @@ include "datacon.php";?>
 							if(!$result){
 								echo(" <script>alert('Please check your inputs before submitting')</script>");
 							} else {
-								echo("<script>alert('Details Added Successfully'); window.location='index.php';</script>");
+								echo("<script>alert('Details Added Successfully'); window.location.reload();</script>");
 							}
 
 						}
 					} else { ?>
 						<h1 style=" margin-top: 10vh; " >Admin Login Page</h1>
-						<form style="margin-top: 5vh;" name="login" action="index.php" method="post">
+						<form style="margin-top: 5vh;" name="login" method="post">
 							<label style=" margin-top:20px; " for="username">Username:</label>
 							<input type="text" id="username" placeholder="Username" name="UserName" required>
 
@@ -109,7 +109,7 @@ include "datacon.php";?>
 								if(password_verify($passwordhash,$pass_db)){
 									$_SESSION["UserName"] = $User__Name;
 									$_SESSION["Account_Type"] = $Account_Type;
-									header("Location:/rmuclearance/admincenter/dashboard.php");
+									header("Location:./Dashboard.php");
 								} else {
 									echo(" <script>alert('Invalid Credentials !!!')</script>");
 								}
