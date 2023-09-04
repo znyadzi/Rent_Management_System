@@ -105,7 +105,7 @@ form {
     width: 100%;
     height:vh;
 }
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=number], input[type=email] {
     font-family: 'Courier New', Courier, monospace;
     position:relative;
     padding: 10px;

@@ -4,10 +4,15 @@
     if (isset($_POST['RegisterDepartment'])) {
 
         $Username = mysqli_real_escape_string($conn,$_POST['Username']);
-        $Department = mysqli_real_escape_string($conn,$_POST['Department']);
+        $FullName = mysqli_real_escape_string($conn,$_POST['FullName']);
+        $Email = mysqli_real_escape_string($conn,$_POST['Email']);
+        $Telephone = mysqli_real_escape_string($conn,$_POST['Telephone']);
         $passwordhash = mysqli_real_escape_string($conn,$_POST['Password']);
         $Pass_Word = password_hash($passwordhash, PASSWORD_BCRYPT);
-        $sql = "INSERT INTO `departmental_logs` (`username`, `user_department`, `user_password`) VALUES ('$Username', '$Department', '$Pass_Word')";
+        $Address = mysqli_real_escape_string($conn,$_POST['Address']);
+        $Number_of_Houses = mysqli_real_escape_string($conn,$_POST['Number_of_Houses']);
+
+        $sql = "INSERT INTO `Landlord_Details` (`Username`, `Full_Name`, `Email`, `Telephone`, `Password`, `Address`, `Number_of_Houses`) VALUES ('$Username', '$FullName', '$Email', '$Telephone', '$Pass_Word', '$Address', '$Number_of_Houses')";
         $result = mysqli_query($conn, $sql);
 
         if(!$result){

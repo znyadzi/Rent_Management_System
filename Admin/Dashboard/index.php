@@ -112,10 +112,22 @@
                             <form name="login" action="registerDepartment.php" method="post">
                                 
                                 <label style="" for="Fullname">Username:</label>
-                                <input type="text" id="Username" placeholder="Username" name="Username" required >
+                                <input type="text" id="Username" placeholder="Enter a Prefered Username" name="Username" required >
                                 
-                                <label for="Telephone">Department:</label>
-                                <input type="text" placeholder="Department Name" id="Department" name="Department" required >
+                                <label for="FullName">Full Name:</label>
+                                <input type="text" placeholder="Enter your Full Name" id="FullName" name="FullName" required >
+
+                                <label for="Email">Email:</label>
+                                <input type="text" placeholder="Enter your Email Address" id="Email" name="Email" required >
+
+                                <label for="Telephone">Telephone:</label>
+                                <input type="text" placeholder="Telephone" id="Telephone" name="Telephone" required >
+
+                                <label for="Address">Address:</label>
+                                <input type="text" placeholder="Enter your Residential Address" id="Address" name="Address" required >
+
+                                <label for="Number_of_Houses">Number of Houses:</label>
+                                <input type="number" placeholder="Enter the Number of Houses you own" id="Number_of_Houses" name="Number_of_Houses" required >
 
                                 <label for="password">Password:</label>
                                 <input type="password" placeholder="Password" id="password" name="Password" required >
