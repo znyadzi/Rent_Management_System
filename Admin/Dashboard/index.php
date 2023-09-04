@@ -53,8 +53,8 @@
                     <?php
                     // Assuming you have established a MySQL database connection
 
-                    // Fetch data from the "departmental_logs" table
-                    $query = "SELECT * FROM departmental_logs";
+                    // Fetch data from the "Landlord_Details" table
+                    $query = "SELECT * FROM Landlord_Details";
                     $result = mysqli_query($conn, $query);
 
                     // Display the table in a decorative format ?>
@@ -64,8 +64,9 @@
                         echo '<table class="decorative-table">';
                         echo '<tr>';
                         echo '<th style="width:10%;" >Table ID</th>';
-                        echo '<th>Username</th>';
-                        echo '<th>User Department</th>';
+                        echo '<th>Full Name</th>';
+                        echo '<th>Email</th>';
+                        echo '<th>Telephone</th>';
                         echo '<th>Action</th>';
                         echo '</tr>';
                         $Table_Id = 0;
@@ -74,8 +75,9 @@
                             $Table_Id += 1;
                             echo '<tr>';
                             echo '<td>' . $Table_Id . '</td>';
-                            echo '<td>' . $row['username'] . '</td>';
-                            echo '<td>' . $row['user_department'] . '</td>';
+                            echo '<td>' . $row['Full_Name'] . '</td>';
+                            echo '<td>' . $row['Email'] . '</td>';
+                            echo '<td>' . $row['Telephone'] . '</td>';
                             echo '<td><button class="delete-button" onclick="deleteDepartment(' . $row['table_id'] . ')" name="Delete_">Delete</button></td>';
                             echo '</tr>';
                         }
