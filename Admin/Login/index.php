@@ -109,7 +109,7 @@ include "datacon.php";?>
 								if(password_verify($passwordhash,$pass_db)){
 									$_SESSION["UserName"] = $User__Name;
 									$_SESSION["Account_Type"] = $Account_Type;
-									header("Location:../Dashboard.php");
+									header("Location:../Dashboard");
 								} else {
 									echo(" <script>alert('Invalid Credentials !!!')</script>");
 								}

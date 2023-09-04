@@ -59,7 +59,7 @@
 
                     // Display the table in a decorative format ?>
                     <div style="display: block; " id="View_Staff_View"><?php
-                        echo '<h1 style="width: 100%; text-align: center; margin-bottom: 2%;  " >Departrment Logs</h1>';
+                        echo '<h1 style="width: 100%; text-align: center; margin-bottom: 2%;  " >LIST OF LANDLORDS</h1>';
                         echo '<div>';
                         echo '<table class="decorative-table">';
                         echo '<tr>';
