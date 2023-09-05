@@ -10,13 +10,13 @@ if (isset($_GET['table_id'])) {
     include "datacon.php";
 
     // Prepare and execute the DELETE query
-    $sql = "DELETE FROM departmental_logs WHERE table_id = '$tableId'";
+    $sql = "DELETE FROM Landlord_Details WHERE table_id = '$tableId'";
     if (mysqli_query($conn, $sql)) {
         // Deletion successful
-        echo "Departmental log entry deleted successfully";
+        echo "Landlord log entry deleted successfully";
     } else {
         // Deletion failed
-        echo "Error deleting departmental log entry: " . mysqli_error($conn);
+        echo "Error deleting Landlord log entry: " . mysqli_error($conn);
     }
 
     // Close the database connection
