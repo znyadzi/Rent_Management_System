@@ -16,9 +16,9 @@
         $result = mysqli_query($conn, $sql);
 
         if(!$result){
-            echo(" <script>alert('Please check your inputs and try again');window.location:'dashboard.php</script>");
+            echo(" <script>alert('Please check your inputs and try again');window.location:'../Dashboard</script>");
         } else {
             echo(" <script>alert('Department Added Successfully');</script>");
         }
-        echo "<script> window.location='dashboard.php'; </script>";
+        echo "<script> window.location='Dashboard'; </script>";
     }?>
