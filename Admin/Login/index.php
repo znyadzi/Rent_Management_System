@@ -26,7 +26,7 @@ session_start();
 					if (!$result) {
 						//echo("<script>alert('We recognised your first login. you are required to register')</script>") ?>
 						<h1>Admin Register Page</h1>
-						<form name="login" method="post">
+						<form name="Register" method="post">
 							<label style="margin-top:20px" for="username">Prefered Username:</label>
 							<input type="text" id="username" placeholder="Leave blank to use 'Admin'" name="Username" >
 							
