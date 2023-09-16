@@ -12,6 +12,7 @@ session_start();
 			<title>Admin | Login </title>
 		</head>
 		<body>
+			
 		<?php
 			if (isset($_SESSION['UserName']) && isset($_SESSION['Account_Type'])) {
 				echo"<script> alert('User Already Logged In'); window.location='../Dashboard'; </script>";
