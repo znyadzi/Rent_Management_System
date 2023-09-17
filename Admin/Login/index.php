@@ -1,6 +1,8 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
-//include "datacon.php";
+include "datacon.php";
 ?>
 <!DOCTYPE html>
 	<html lang="en">
@@ -16,15 +18,15 @@ session_start();
 			if (isset($_SESSION['UserName']) && isset($_SESSION['Account_Type'])) {
 				echo"<script> alert('User Already Logged In'); window.location='../Dashboard'; </script>";
 			} else {
-
+				
 				if (mysqli_connect_errno()) {
 					echo"<script> alert('No connection to database!!!'); </script>";
 				} else {
 					$querychlog = "SELECT * FROM `adminLogins`";
-					$result = mysqli_fetch_assoc(mysqli_query($conn,$querychlog));
-
-					if (!$result) {
-						//echo("<script>alert('We recognised your first login. you are required to register')</script>") ?>
+					$resultadminlog = mysqli_fetch_assoc(mysqli_query($conn,$querychlog));
+					if (!$resultadminlog) {
+						
+						echo("<script>alert('We recognised your first login. you are required to register')</script>") ?>
 						<h1>Admin Register Page</h1>
 						<form name="Register" method="post">
 							<label style="margin-top:20px" for="username">Prefered Username:</label>
@@ -84,41 +86,41 @@ session_start();
 
 						}
 					} else { ?>
-						<h1 style=" margin-top: 10vh; " >Admin Login Page</h1>
-						<form style="margin-top: 5vh;" name="login" method="post">
-							<label style=" margin-top:20px; " for="username">Username:</label>
-							<input type="text" id="username" placeholder="Username" name="UserName" required>
+							<h1 style=" margin-top: 10vh; " >Admin Login Page</h1>
+							<form style="margin-top: 5vh;" name="login" method="post">
+								<label style=" margin-top:20px; " for="username">Username:</label>
+								<input type="text" id="username" placeholder="Username" name="UserName" required>
 
-							<label for="password">Password:</label>
-							<input type="password" placeholder="Password" id="password" name="PassWord" required>
+								<label for="password">Password:</label>
+								<input type="password" placeholder="Password" id="password" name="PassWord" required>
 
-							<input style="margin-bottom:20px" name="LogIn" type="submit" value="Log In">
-							<p><a href="forgot-password.php">Forgot password?</a></p>
-						</form>
-						<?php
-						if (isset($_POST['LogIn'])) {
-							$User__Name = mysqli_real_escape_string($conn,$_POST['UserName']);
-							$passwordhash = mysqli_real_escape_string($conn,$_POST['PassWord']);
-							$sql = "SELECT * FROM adminLogins WHERE username = '$User__Name'";
-							$result = mysqli_query($conn, $sql);
+								<input style="margin-bottom:20px" name="LogIn" type="submit" value="Log In">
+								<p><a href="forgot-password.php">Forgot password?</a></p>
+							</form>
+							<?php
+							if (isset($_POST['LogIn'])) {
+								$User__Name = mysqli_real_escape_string($conn,$_POST['UserName']);
+								$passwordhash = mysqli_real_escape_string($conn,$_POST['PassWord']);
+								$sql = "SELECT * FROM adminLogins WHERE username = '$User__Name'";
+								$result = mysqli_query($conn, $sql);
 
-							if(mysqli_num_rows($result) > 0){
-								$row = mysqli_fetch_assoc($result);
-								$pass_db = $row['password'];
-								$Account_Type = "Admin";
+								if(mysqli_num_rows($result) > 0){
+									$row = mysqli_fetch_assoc($result);
+									$pass_db = $row['password'];
+									$Account_Type = "Admin";
 
-								if(password_verify($passwordhash,$pass_db)){
-									$_SESSION["UserName"] = $User__Name;
-									$_SESSION["Account_Type"] = $Account_Type;
-									header("Location:../Dashboard");
+									if(password_verify($passwordhash,$pass_db)){
+										$_SESSION["UserName"] = $User__Name;
+										$_SESSION["Account_Type"] = $Account_Type;
+										header("Location:../Dashboard");
+									} else {
+										echo(" <script>alert('Invalid Credentials !!!')</script>");
+									}
 								} else {
 									echo(" <script>alert('Invalid Credentials !!!')</script>");
 								}
-							} else {
-								echo(" <script>alert('Invalid Credentials !!!')</script>");
 							}
-					 	}
-					}
+						}
 				}
 			}
 				
