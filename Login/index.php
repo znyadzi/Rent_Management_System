@@ -46,15 +46,15 @@ include "datacon.php";
 								<div class="modal-dialog modal-dialog-centered modal-xl">
 									<div class="modal-content">
 										<div class="modal-header">
-											<h5 class="modal-title" id="fullScreenModalLabel">Choose an Option</h5>
+											<h5 class="modal-title" id="fullScreenModalLabel">Register new Account</h5>
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
 										</div>
-										<div class="modal-body">
-											<p>Click one of the buttons below:</p>
-											<button class="btn btn-primary" onclick="redirectToOption1()">Option 1</button>
-											<button class="btn btn-secondary" onclick="redirectToOption2()">Option 2</button>
+										<div class="modal-body text-center">
+											<p>Select Your Account type below:</p>
+											<button class="btn btn-primary" onclick="redirectToOption1()">LandLord</button>
+											<button style="margin-left:5%;" class="btn btn-secondary ml-2" onclick="redirectToOption2()">Tenant</button>
 										</div>
 									</div>
 								</div>
@@ -68,11 +68,11 @@ include "datacon.php";
 							<script>
 								// JavaScript functions to redirect to different URLs
 								function redirectToOption1() {
-									window.location.href = 'option1.php';
+									window.location.href = '../Register/LandLord';
 								}
 
 								function redirectToOption2() {
-									window.location.href = 'option2.php';
+									window.location.href = '../Register/LandLord';
 								}
 							</script>
 							<?php

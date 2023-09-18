@@ -68,7 +68,15 @@ input[type=submit] {
     width: 40%;
 }
 
-#fullScreenModal
+/* #fullScreenModal{
+    padding-left: 50%;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    vertical-align: middle;
+    flex-direction: column;
+    background-size: cover;
+} */
 /* input[type=submit]:hover {
     background-color: #45a049;
 }
