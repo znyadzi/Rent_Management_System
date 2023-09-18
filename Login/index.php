@@ -54,7 +54,7 @@ include "datacon.php";
 										<div class="modal-body text-center">
 											<p>Select Your Account type below:</p>
 											<button class="btn btn-primary" onclick="redirectToOption1()">LandLord</button>
-											<button style="margin-left:5%;" class="btn btn-secondary ml-2" onclick="redirectToOption2()">Tenant</button>
+											 <button class="btn btn-secondary ml-5" onclick="redirectToOption2()">Tenant</button> 
 										</div>
 									</div>
 								</div>
