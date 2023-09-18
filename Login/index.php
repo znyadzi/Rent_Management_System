@@ -36,7 +36,7 @@ include "datacon.php";
 								<label for="password">Password:</label>
 								<input type="password" placeholder="Password" id="password" name="PassWord" required>
 
-								<input style="margin-bottom:20px" name="LogIn" type="submit" value="Log In">
+								<input style="margin-bottom:20px" name="LogIn" type="submit" value="Sign In">
 
 								<p><a href="forgot-password.php">Forgot password?</a></p>
 								<p>Not Registered yet? <u style="cursor:pointer;" class="btn btn-primary" data-toggle="modal" data-target="#fullScreenModal">Register</u></p>
@@ -45,8 +45,8 @@ include "datacon.php";
 							<div class="modal fade" id="fullScreenModal" tabindex="-1" role="dialog" aria-labelledby="fullScreenModalLabel" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered modal-xl">
 									<div class="modal-content">
-										<div class="modal-header">
-											<h1 class="modal-title text-center" id="fullScreenModalLabel">Register new Account</h1>
+										<div class="modal-header pl-10">
+											<h3 class="modal-title" id="fullScreenModalLabel" >Register new Account</h3>
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
