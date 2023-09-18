@@ -38,8 +38,39 @@ include "datacon.php";
 								<input style="margin-bottom:20px" name="LogIn" type="submit" value="Log In">
 
 								<p><a href="forgot-password.php">Forgot password?</a></p>
-								<p>Not Registered yet? <u style="cursor:pointer;" Onclick="window.location='../Register'">Register</u></p>
+								<p>Not Registered yet? <u style="cursor:pointer;" Onclick="showModal()">Register</u></p>
 							</form>
+							<div id="myModal" Style="display:none;" class="modal">
+								<div class="modal-content">
+									<h1>Choose an Option</h1>
+									<p>Click one of the buttons below:</p>
+									<button onclick="redirectToOption1()">Option 1</button>
+									<button onclick="redirectToOption2()">Option 2</button>
+								</div>
+							</div>
+
+							<script>
+								// JavaScript function to display the modal
+								function showModal() {
+									var modal = document.getElementById('myModal');
+									modal.style.display = 'block';
+								}
+
+								// JavaScript function to close the modal
+								function closeModal() {
+									var modal = document.getElementById('myModal');
+									modal.style.display = 'none';
+								}
+
+								// JavaScript functions to redirect to different URLs
+								function redirectToOption1() {
+									window.location.href = 'option1.php';
+								}
+
+								function redirectToOption2() {
+									window.location.href = 'option2.php';
+								}
+							</script>
 							<?php
 							if (isset($_POST['LogIn'])) {
 								$User__Name = mysqli_real_escape_string($conn,$_POST['UserName']);
