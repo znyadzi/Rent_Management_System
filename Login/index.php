@@ -10,6 +10,7 @@ include "datacon.php";
 			<meta charset="UTF-8">
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 			<link rel="stylesheet" href="stylesheet.css">
 			<title>User | Login </title>
 		</head>
@@ -38,28 +39,29 @@ include "datacon.php";
 								<input style="margin-bottom:20px" name="LogIn" type="submit" value="Log In">
 
 								<p><a href="forgot-password.php">Forgot password?</a></p>
-								<p>Not Registered yet? <u style="cursor:pointer;" Onclick="showModal()">Register</u></p>
+								<p>Not Registered yet? <u style="cursor:pointer;" Onclick="showFullScreenPopup()">Register</u></p>
 							</form>
-							<div id="myModal" Style="display:none;" class="modal">
+							<div id="fullScreenPopup" class="modal-overlay">
 								<div class="modal-content">
 									<h1>Choose an Option</h1>
 									<p>Click one of the buttons below:</p>
 									<button onclick="redirectToOption1()">Option 1</button>
 									<button onclick="redirectToOption2()">Option 2</button>
+									<button onclick="closeFullScreenPopup()">Close</button>
 								</div>
 							</div>
 
 							<script>
-								// JavaScript function to display the modal
-								function showModal() {
-									var modal = document.getElementById('myModal');
-									modal.style.display = 'block';
+								// JavaScript function to display the full-screen popup
+								function showFullScreenPopup() {
+									var fullScreenPopup = document.getElementById('fullScreenPopup');
+									fullScreenPopup.style.display = 'flex'; // Display the overlay as a flex container
 								}
 
-								// JavaScript function to close the modal
-								function closeModal() {
-									var modal = document.getElementById('myModal');
-									modal.style.display = 'none';
+								// JavaScript function to close the full-screen popup
+								function closeFullScreenPopup() {
+									var fullScreenPopup = document.getElementById('fullScreenPopup');
+									fullScreenPopup.style.display = 'none';
 								}
 
 								// JavaScript functions to redirect to different URLs
